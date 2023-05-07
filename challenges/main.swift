@@ -1,21 +1,6 @@
 //ChatGPT PROMPT:
 // generate macOS command line tool use Swift and spm ArgumentParser to count total bytes across files specified as url arguments, supporting an -x:filespec to generate per file byte counts in the file filespec
-// build in xcode, go chase down executable in Derived Data then use this command to move executable
-// sudo mv ./challenges /usr/local/bin/challenges
-
-//sample data
-// % challenges https://billdonner.com/fs/food.json https://billdonner.com/fs/oceans.json https://billdonner.com/fs/us_presidents.json https://billdonner.com/fs/vacation.json https://billdonner.com/fs/elvis_presley.json https://billdonner.com/fs/rock_and_roll.json https://billdonner.com/fs/rap_artists.json https://billdonner.com/fs/new_york_city.json https://billdonner.com/fs/world_heritage_sites.json https://billdonner.com/fs/the_himalayas.json
- 
-//"Read, Validate, and de-duplicate remote json Challenge files  specified as url arguments, supporting an -f filespec to generate a GamePlay ready json file"
-
-import Foundation
-import ArgumentParser
-
-var count : Int = 0
-var bytesRead : Int = 0
-var topicCounts: [String:Int] = [:]
-var dupeCounts: [String:Int] = [:]
-
+//
 struct Challenge :Codable,Hashable,Identifiable,Equatable {
   let id : String
   let question: String
@@ -28,6 +13,29 @@ struct Challenge :Codable,Hashable,Identifiable,Equatable {
   let image:String // URL of image of correct Answer
 }
 
+// the Challenge structure (above) is also fed to chatgpt as part of the PROMPT
+
+// build in xcode, go chase down executable in Derived Data then use this command to move executable
+// sudo mv ./challenges /usr/local/bin/challenges
+
+//sample data
+// % challenges https://billdonner.com/fs/food.json https://billdonner.com/fs/oceans.json https://billdonner.com/fs/us_presidents.json https://billdonner.com/fs/vacation.json https://billdonner.com/fs/elvis_presley.json https://billdonner.com/fs/rock_and_roll.json https://billdonner.com/fs/rap_artists.json https://billdonner.com/fs/new_york_city.json https://billdonner.com/fs/world_heritage_sites.json https://billdonner.com/fs/the_himalayas.json
+
+// challenges -f file:///Users/BillDonner/Desktop/foobar.json  https://billdonner.com/fs/food.json https://billdonner.com/fs/oceans.json https://billdonner.com/fs/us_presidents.json https://billdonner.com/fs/vacation.json https://billdonner.com/fs/elvis_presley.json https://billdonner.com/fs/rock_and_roll.json https://billdonner.com/fs/rap_artists.json https://billdonner.com/fs/new_york_city.json https://billdonner.com/fs/world_heritage_sites.json https://billdonner.com/fs/the_himalayas.json
+ 
+//"Read, Validate, and de-duplicate remote json Challenge files  specified as url arguments, supporting an -f filespec to generate a GamePlay ready json file"
+
+import Foundation
+import ArgumentParser
+
+var count : Int = 0
+var bytesRead : Int = 0
+var topicCounts: [String:Int] = [:]
+var dupeCounts: [String:Int] = [:]
+
+
+
+// MARK: - validate all files and segregate by topic
 
 func analyze(_ urls:[String]) {
   // Iterate over the URLs and count the bytes read at each URL.
@@ -82,6 +90,9 @@ func analyze(_ urls:[String]) {
     }
   }
 }
+
+// MARK: - write a local output file ready for loading into app
+
 func writeJSONFile(_ urls:[String], outurl:URL)
 {
   var allChallenges:[Challenge] = []
@@ -144,6 +155,8 @@ func writeJSONFile(_ urls:[String], outurl:URL)
   }
   
 }
+
+// MARK: - command line parsing with Argument Parser
 struct Challenges: ParsableCommand {
     static let configuration = CommandConfiguration(
         abstract: "Read, Validate, and de-duplicate remote json Challenge files  specified as url arguments, supporting an -f filespec to generate a GamePlay ready json file",
