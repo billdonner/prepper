@@ -91,15 +91,29 @@ func analyze(_ urls:[String]) {
   }
 }
 
+
+
+struct GameData : Codable, Hashable,Identifiable,Equatable {
+  internal init(subject: String, challenges: [Challenge]) {
+    self.subject = subject
+    self.challenges = challenges //.shuffled()  //randomize
+    self.id = UUID().uuidString
+    self.generated = Date()
+  }
+  
+  let id : String
+  let subject: String
+  let challenges: [Challenge]
+  let generated: Date
+}
+
 // MARK: - write a local output file ready for loading into app
 
 func writeJSONFile(_ urls:[String], outurl:URL)
 {
   var allChallenges:[Challenge] = []
-  //  guard let outurl = URL(string :tourl) else {
-  //    print ("cant write to \(tourl)")
-  //    return
-  //  }
+  var topicCount = 0
+  var fileCount = 0
   for url in urls {
     // read all the urls again
     guard let u = URL(string:url) else {
@@ -107,6 +121,7 @@ func writeJSONFile(_ urls:[String], outurl:URL)
       continue
     }
     do {
+      fileCount += 1
       let data = try Data(contentsOf: u)
       let cha = try JSONDecoder().decode([Challenge].self, from: data)
       var removalIndices:[Int] = []
@@ -139,15 +154,43 @@ func writeJSONFile(_ urls:[String], outurl:URL)
     }
     
   }
+  
+  //sort by topic
+  allChallenges.sort(){ a,b in
+    return a.topic < b.topic
+  }
+ //separate challenges by topic and make an array of GameDatas
+  var gameDatum : [ GameData] = []
+  var lastTopic: String? = nil
+  var theseChallenges : [Challenge] = []
+  for challenge in allChallenges {
+   // print(challenge.topic,lastTopic)
+    if let last = lastTopic  {
+      if challenge.topic != last {
+        gameDatum.append( GameData(subject:last,challenges: theseChallenges))
+        theseChallenges = []
+        topicCount += 1
+      }
+    }
+      // append this challenge and set topic
+      theseChallenges += [challenge]
+      lastTopic = challenge.topic
+
+  }
+  if let last = lastTopic {
+    topicCount += 1
+    gameDatum.append( GameData(subject:last,challenges: theseChallenges)) //include remainders
+  }
+  
   // write Challenges as JSON to file
   let encoder = JSONEncoder()
   encoder.outputFormatting = .prettyPrinted
   do {
-    let data = try encoder.encode(allChallenges)
+    let data = try encoder.encode(gameDatum)
     let json = String(data:data,encoding: .utf8)
     if let json  {
       try json.write(to: outurl, atomically: false, encoding: .utf8)
-      print("Wrote \(json.count) bytes, \(allChallenges.count) challenges to \(outurl)")
+      print("Wrote \(json.count) bytes, \(allChallenges.count) challenges, \(topicCount) topics to \(outurl)")
     }
   }
   catch {
@@ -160,7 +203,7 @@ func writeJSONFile(_ urls:[String], outurl:URL)
 struct Challenges: ParsableCommand {
     static let configuration = CommandConfiguration(
         abstract: "Read, Validate, and de-duplicate remote json Challenge files  specified as url arguments, supporting an -f filespec to generate a GamePlay ready json file",
-        version: "0.1.0",
+        version: "0.1.1",
         subcommands: [],
         defaultSubcommand: nil,
         helpNames: [.long, .short]
