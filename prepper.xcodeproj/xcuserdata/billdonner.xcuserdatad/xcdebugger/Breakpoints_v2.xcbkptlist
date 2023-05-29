@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7DC37489-0C0F-4070-BF71-71264674D075"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2589D5F-C05E-4501-A4A7-829F62DA2803"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenges/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "writeJSONFile(_:outurl:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "F2589D5F-C05E-4501-A4A7-829F62DA2803 - 880cd8378e23d935"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "5032">
+               </Location>
+               <Location
+                  uuid = "F2589D5F-C05E-4501-A4A7-829F62DA2803 - 880cd8378e23d9da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "5184">
+               </Location>
+               <Location
+                  uuid = "F2589D5F-C05E-4501-A4A7-829F62DA2803 - 880cd8378e23d9da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "5244">
+               </Location>
+               <Location
+                  uuid = "F2589D5F-C05E-4501-A4A7-829F62DA2803 - 880cd8378e23d9da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "5032">
+               </Location>
+               <Location
+                  uuid = "F2589D5F-C05E-4501-A4A7-829F62DA2803 - e917d117eb9e935a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "5032">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07467AA2-196F-426D-8EF1-6C28BE92BEB5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "challenges/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "writeJSONFile(_:outurl:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "07467AA2-196F-426D-8EF1-6C28BE92BEB5 - 880cd8378e23d8e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "5660">
+               </Location>
+               <Location
+                  uuid = "07467AA2-196F-426D-8EF1-6C28BE92BEB5 - 880cd8378e23d880"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "5812">
+               </Location>
+               <Location
+                  uuid = "07467AA2-196F-426D-8EF1-6C28BE92BEB5 - 880cd8378e23d880"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "5872">
+               </Location>
+               <Location
+                  uuid = "07467AA2-196F-426D-8EF1-6C28BE92BEB5 - 880cd8378e23d8a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "5872">
+               </Location>
+               <Location
+                  uuid = "07467AA2-196F-426D-8EF1-6C28BE92BEB5 - 880cd8378e23db46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "challenges.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "challenges"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "5696">
+               </Location>
+               <Location
+                  uuid = "07467AA2-196F-426D-8EF1-6C28BE92BEB5 - e917d117eb9e91c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.writeJSONFile(_: Swift.Array&lt;Swift.String&gt;, outurl: Foundation.URL) -&gt; ()"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/challenges/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "5696">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "841533D8-F785-461E-8D1A-2B4F4740039C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "prepper/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "fixupJSON(data:url:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "841533D8-F785-461E-8D1A-2B4F4740039C - b853d7d9f070c9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.fixupJSON(data: Foundation.Data, url: Swift.String) -&gt; Swift.Array&lt;prepper.Challenge&gt;"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "841533D8-F785-461E-8D1A-2B4F4740039C - b853d7d9f070c9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.fixupJSON(data: Foundation.Data, url: Swift.String) -&gt; Swift.Array&lt;prepper.Challenge&gt;"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "1024">
+               </Location>
+               <Location
+                  uuid = "841533D8-F785-461E-8D1A-2B4F4740039C - 983f3a95c0fd29de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.fixupJSON(data: Foundation.Data, url: Swift.String) -&gt; Swift.Array&lt;q20kshare.Challenge&gt;"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "664">
+               </Location>
+               <Location
+                  uuid = "841533D8-F785-461E-8D1A-2B4F4740039C - 983f3a95c0fd29de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.fixupJSON(data: Foundation.Data, url: Swift.String) -&gt; Swift.Array&lt;q20kshare.Challenge&gt;"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1020">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		884DDEA32A241B3000DD138F /* q20kshare in Frameworks */ = {isa = PBXBuildFile; productRef = 884DDEA22A241B3000DD138F /* q20kshare */; };
 		887565CA2A08322A0030AE77 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887565C92A08322A0030AE77 /* main.swift */; };
 		887565D22A0832610030AE77 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 887565D12A0832610030AE77 /* ArgumentParser */; };
 /* End PBXBuildFile section */
@@ -24,7 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		887565C62A08322A0030AE77 /* challenges */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = challenges; sourceTree = BUILT_PRODUCTS_DIR; };
+		887565C62A08322A0030AE77 /* prepper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = prepper; sourceTree = BUILT_PRODUCTS_DIR; };
 		887565C92A08322A0030AE77 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884DDEA32A241B3000DD138F /* q20kshare in Frameworks */,
 				887565D22A0832610030AE77 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,7 +45,7 @@
 		887565BD2A08322A0030AE77 = {
 			isa = PBXGroup;
 			children = (
-				887565C82A08322A0030AE77 /* challenges */,
+				887565C82A08322A0030AE77 /* prepper */,
 				887565C72A08322A0030AE77 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,25 +53,25 @@
 		887565C72A08322A0030AE77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				887565C62A08322A0030AE77 /* challenges */,
+				887565C62A08322A0030AE77 /* prepper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		887565C82A08322A0030AE77 /* challenges */ = {
+		887565C82A08322A0030AE77 /* prepper */ = {
 			isa = PBXGroup;
 			children = (
 				887565C92A08322A0030AE77 /* main.swift */,
 			);
-			path = challenges;
+			path = prepper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		887565C52A08322A0030AE77 /* challenges */ = {
+		887565C52A08322A0030AE77 /* prepper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 887565CD2A08322A0030AE77 /* Build configuration list for PBXNativeTarget "challenges" */;
+			buildConfigurationList = 887565CD2A08322A0030AE77 /* Build configuration list for PBXNativeTarget "prepper" */;
 			buildPhases = (
 				887565C22A08322A0030AE77 /* Sources */,
 				887565C32A08322A0030AE77 /* Frameworks */,
@@ -79,12 +81,13 @@
 			);
 			dependencies = (
 			);
-			name = challenges;
+			name = prepper;
 			packageProductDependencies = (
 				887565D12A0832610030AE77 /* ArgumentParser */,
+				884DDEA22A241B3000DD138F /* q20kshare */,
 			);
 			productName = challenges;
-			productReference = 887565C62A08322A0030AE77 /* challenges */;
+			productReference = 887565C62A08322A0030AE77 /* prepper */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 887565C12A08322A0030AE77 /* Build configuration list for PBXProject "challenges" */;
+			buildConfigurationList = 887565C12A08322A0030AE77 /* Build configuration list for PBXProject "prepper" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,12 +116,13 @@
 			mainGroup = 887565BD2A08322A0030AE77;
 			packageReferences = (
 				887565D02A0832610030AE77 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				884DDEA12A241B3000DD138F /* XCRemoteSwiftPackageReference "q20kshare" */,
 			);
 			productRefGroup = 887565C72A08322A0030AE77 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				887565C52A08322A0030AE77 /* challenges */,
+				887565C52A08322A0030AE77 /* prepper */,
 			);
 		};
 /* End PBXProject section */
@@ -273,7 +277,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		887565C12A08322A0030AE77 /* Build configuration list for PBXProject "challenges" */ = {
+		887565C12A08322A0030AE77 /* Build configuration list for PBXProject "prepper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				887565CB2A08322A0030AE77 /* Debug */,
@@ -282,7 +286,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		887565CD2A08322A0030AE77 /* Build configuration list for PBXNativeTarget "challenges" */ = {
+		887565CD2A08322A0030AE77 /* Build configuration list for PBXNativeTarget "prepper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				887565CE2A08322A0030AE77 /* Debug */,
@@ -294,6 +298,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		884DDEA12A241B3000DD138F /* XCRemoteSwiftPackageReference "q20kshare" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/billdonner/q20kshare";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		887565D02A0832610030AE77 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
@@ -305,6 +317,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		884DDEA22A241B3000DD138F /* q20kshare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 884DDEA12A241B3000DD138F /* XCRemoteSwiftPackageReference "q20kshare" */;
+			productName = q20kshare;
+		};
 		887565D12A0832610030AE77 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 887565D02A0832610030AE77 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
