@@ -93,19 +93,6 @@ func analyze(_ urls:[String]) {
 
 
 
-struct GameData : Codable, Hashable,Identifiable,Equatable {
-  internal init(subject: String, challenges: [Challenge]) {
-    self.subject = subject
-    self.challenges = challenges //.shuffled()  //randomize
-    self.id = UUID().uuidString
-    self.generated = Date()
-  }
-  
-  let id : String
-  let subject: String
-  let challenges: [Challenge]
-  let generated: Date
-}
 
 // MARK: - write a local output file ready for loading into app
 
