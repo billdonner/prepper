@@ -1,6 +1,7 @@
 #  Prepper - Prepare ChatGPT Output for IOS App
 
 Freeport.Software internal Utility
+for carol only right now
 ```
 OVERVIEW: Read, Validate, and de-duplicate remote json Challenge files 
 specified as url arguments, supporting an -f filespec to generate a GamePlay
