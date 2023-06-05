@@ -49,6 +49,7 @@ fileprivate func fixupJSON(   data: Data, url: String)-> [Challenge] {
     return try Challenge.decodeArrayFrom(data: data)
   }
   catch {
+    print("****Trying to recover from decoding error, \(error)")
     if let s = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) {
       if !s.hasSuffix("]") {
         if let v = String(s+"]").data(using:.utf8) {
@@ -86,7 +87,7 @@ func analyze(_ urls:[String]) {
 
       // Decode the data, which means converting data to Swift objects.
     handle_challenges(challenges:challenges)
-    print("Input \(url) - \(bytesRead) bytes, \(challenges.count) challenges")
+    print(">Read \(url) - \(bytesRead) bytes, \(challenges.count) challenges")
   } // all urls
  printTopicsAndDuplicates()
 }
@@ -147,7 +148,7 @@ func writeJSONFile(_ urls:[String], outurl:URL)
       continue
       
     }
-    print(">Prepper writing to \(url)")
+    print(">Prepper reading from \(url)")
     //sort by topic
     allChallenges.sort(){ a,b in
       return a.topic < b.topic

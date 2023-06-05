@@ -209,14 +209,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "841533D8-F785-461E-8D1A-2B4F4740039C"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "prepper/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "fixupJSON(data:url:)"
             landmarkType = "9">
             <Locations>
@@ -279,6 +279,146 @@
                   startingLineNumber = "52"
                   endingLineNumber = "52"
                   offsetFromSymbolStart = "1020">
+               </Location>
+               <Location
+                  uuid = "841533D8-F785-461E-8D1A-2B4F4740039C - 983f3a95c0fd29de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.fixupJSON(data: Foundation.Data, url: Swift.String) -&gt; Swift.Array&lt;q20kshare.Challenge&gt;"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "841533D8-F785-461E-8D1A-2B4F4740039C - 983f3a95c0fd29de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.fixupJSON(data: Foundation.Data, url: Swift.String) -&gt; Swift.Array&lt;q20kshare.Challenge&gt;"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "888">
+               </Location>
+               <Location
+                  uuid = "841533D8-F785-461E-8D1A-2B4F4740039C - 983f3a95c0fd29ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.fixupJSON(data: Foundation.Data, url: Swift.String) -&gt; Swift.Array&lt;q20kshare.Challenge&gt;"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1072">
+               </Location>
+               <Location
+                  uuid = "841533D8-F785-461E-8D1A-2B4F4740039C - 983f3a95c0fd29ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.fixupJSON(data: Foundation.Data, url: Swift.String) -&gt; Swift.Array&lt;q20kshare.Challenge&gt;"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1432">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3DF2459F-63AC-4414-AE8F-51045005B135"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "prepper/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "handle_challenges(challenges:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "143A8588-9366-467E-86ED-271BE9651BE4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "prepper/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "fixupJSON(data:url:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F513864-C22D-4E54-92C6-964BF8A9C3CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "prepper/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "analyze(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "2F513864-C22D-4E54-92C6-964BF8A9C3CB - a4c8ba6568b0f91d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.analyze(Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "740">
+               </Location>
+               <Location
+                  uuid = "2F513864-C22D-4E54-92C6-964BF8A9C3CB - a4c8ba6568b0f93a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "prepper.analyze(Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "prepper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "740">
                </Location>
             </Locations>
          </BreakpointContent>
