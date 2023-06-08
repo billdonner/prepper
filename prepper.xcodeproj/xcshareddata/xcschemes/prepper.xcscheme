@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "https://billdonner.com/fs/gd/validated-10k-pumper-output.json"
+            argument = "https://billdonner.com/fs/gd/pumper-output-data.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
