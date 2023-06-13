@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "https://billdonner.com/fs/gd/pumper-output-data.json"
+            argument = "https://billdonner.com/fs/gd/pumper-out.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -60,7 +60,7 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "-g file:///users/billdonner/Desktop/readyforios01.json"
+            argument = "-g file:///users/billdonner/Desktop/readyforios01"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
