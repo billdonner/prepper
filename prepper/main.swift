@@ -284,17 +284,17 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
 // MARK: - command line parsing with Argument Parser
 struct Prepper: ParsableCommand {
   static let configuration = CommandConfiguration(
-    abstract: "Read, Validate, and de-duplicate remote json Challenge files  specified as url arguments",
+    abstract: "Read, Validate, and de-duplicate remote JSON Pumper-out files\n\n *** WARNING: output precedes input files on command line ***\n\nversion 0.1.3",
     version: "0.1.3",
     subcommands: [],
     defaultSubcommand: nil,
     helpNames: [.long, .short]
   )
   
-  @Argument(help: "Local Filespec for the output GamePlay file")
+  @Argument(help: "Local Filespec for the output GamePlay file.")
   var gameFile: String
   
-  @Argument(help: "List of input URLs of files to process")
+  @Argument(help: "List of input URLs of files to process.")
   var urls: [String]
   
 
