@@ -52,16 +52,16 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
+            argument = "file:///users/billdonner/Desktop/readyforios02"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "https://billdonner.com/fs/gd/pumper-out.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--help"
             isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-g file:///users/billdonner/Desktop/readyforios01"
-            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>

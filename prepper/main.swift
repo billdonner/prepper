@@ -1,6 +1,8 @@
 
- 
-//"Read, Validate, and de-duplicate remote json Challenge files  specified as url arguments, supporting an -f filespec to generate a GamePlay ready json file"
+
+//"Read, Validate, and de-duplicate remote json Challenge files"
+
+//WARNING - output proceeds input
 
 import Foundation
 import ArgumentParser
@@ -24,7 +26,7 @@ var dupeCounts: [String:Int] = [:]
 
 // MARK: - validate all files and segregate by topic
 func handle_challenges(challenges:[Challenge]) {
-
+  
   for challenge in challenges {
     let key = challenge.topic
     if let topic =  topicCounts [key] {
@@ -87,19 +89,19 @@ func analyze(_ urls:[String]) {
       continue
     }
     do {
-       data = try Data(contentsOf: u)
+      data = try Data(contentsOf: u)
     }
     catch {
       print("Can't read contents of \(url), error: \(error)" )
       continue
     }
     challenges = fixupJSON( data: data, url: url)
-
-      // Decode the data, which means converting data to Swift objects.
+    
+    // Decode the data, which means converting data to Swift objects.
     handle_challenges(challenges:challenges)
     print(">Read \(url) - \(bytesRead) bytes, \(challenges.count) challenges")
   } // all urls
- printTopicsAndDuplicates()
+  printTopicsAndDuplicates()
 }
 
 
@@ -152,7 +154,7 @@ fileprivate func prep(_ x:String, initial:String) throws  -> FileHandle? {
   }
   do {
     let  fh = try FileHandle(forWritingTo: newurl)
-      fh.write(initial.data(using: .utf8)!)
+    fh.write(initial.data(using: .utf8)!)
     return fh
   } catch {
     print("Cant write to \(newurl), \(error)"); throw PrepperError.cantWrite
@@ -171,15 +173,15 @@ fileprivate func writeAsPrompts<T:Encodable>(_ data: [T], _ outurl: URL) throws 
     for d in data {
       let da  = try encoder.encode(d)
       let json = String(data:da ,encoding: .utf8)
-      if let json  { 
+      if let json  {
         let outs = "***\n\(json)\nAnswer with id ,true-or-false, and explanation as JSON\n\n"
         bc += outs.count
         fh.write(outs.data(using: .utf8)!)      }
     }
   }
-    catch {
-      print ("Can't write output \(error)")
-    }
+  catch {
+    print ("Can't write output \(error)")
+  }
   return bc
 }
 fileprivate func writeAsJSON<T:Encodable>(_ data: [T], _ outurl: URL) throws -> Int {
@@ -194,7 +196,7 @@ fileprivate func writeAsJSON<T:Encodable>(_ data: [T], _ outurl: URL) throws -> 
       try json.write(to: outurl, atomically: false, encoding: .utf8)
     }
   }
- 
+  
   return bc
 }
 
@@ -204,13 +206,13 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
   var topicCount = 0
   var fileCount = 0
   let start_time = Date()
-
-    let fj = gameFile + "-gamedata.json"
-    let fp = gameFile + "-prompts.txt"
+  
+  let fj = gameFile + "-gamedata.json"
+  let fp = gameFile + "-prompts.txt"
   let gamedataURL = URL(string:fj)
   let promptsURL = URL(string:fp)
   guard let promptsURL =  promptsURL, let gamedataURL = gamedataURL else { return }
- 
+  
   for url in urls {
     // read all the urls again
     guard let u = URL(string:url) else {
@@ -281,33 +283,31 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
 
 // MARK: - command line parsing with Argument Parser
 struct Prepper: ParsableCommand {
-    static let configuration = CommandConfiguration(
-        abstract: "Read, Validate, and de-duplicate remote json Challenge files  specified as url arguments, supporting an -f filespec to generate a GamePlay ready json file",
-        version: "0.1.2",
-        subcommands: [],
-        defaultSubcommand: nil,
-        helpNames: [.long, .short]
-    )
+  static let configuration = CommandConfiguration(
+    abstract: "Read, Validate, and de-duplicate remote json Challenge files  specified as url arguments",
+    version: "0.1.3",
+    subcommands: [],
+    defaultSubcommand: nil,
+    helpNames: [.long, .short]
+  )
+  
+  @Argument(help: "Local Filespec for the output GamePlay file")
+  var gameFile: String
+  
+  @Argument(help: "List of input URLs of files to process")
+  var urls: [String]
+  
 
-    @Option(name: .shortAndLong, help: "Specify the filespec for the output GamePlay file")
-    var gameFile: String?
-
-    @Argument(help: "List of input URLs of files to process")
-    var urls: [String]
-
-    func run() throws {
-      let start_time = Date()
-      print(">Prepper Command Line: \(CommandLine.arguments)")
-      print(">Prepper running at \(Date())")
-      analyze(urls)
-      if let filespec = gameFile  {
-          writeOutputFiles(urls, gameFile:filespec)
-        let elapsed = Date().timeIntervalSince(start_time)
-        print(">Prepper finished in \(elapsed)secs")
-        
-        }
-
-    }
+  
+  func run() throws {
+    let start_time = Date()
+    print(">Prepper Command Line: \(CommandLine.arguments)")
+    print(">Prepper running at \(Date())")
+    analyze(urls)
+    writeOutputFiles(urls, gameFile:gameFile)
+    let elapsed = Date().timeIntervalSince(start_time)
+    print(">Prepper finished in \(elapsed)secs")
+  }
 }
 
 Prepper.main()

@@ -215,8 +215,8 @@
             filePath = "prepper/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "fixupJSON(data:url:)"
             landmarkType = "9">
             <Locations>
@@ -353,8 +353,8 @@
             filePath = "prepper/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "handle_challenges(challenges:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -369,8 +369,8 @@
             filePath = "prepper/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "fixupJSON(data:url:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -385,10 +385,10 @@
             filePath = "prepper/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "analyze(_:)"
+            landmarkType = "9">
             <Locations>
                <Location
                   uuid = "2F513864-C22D-4E54-92C6-964BF8A9C3CB - a4c8ba6568b0f91d"
