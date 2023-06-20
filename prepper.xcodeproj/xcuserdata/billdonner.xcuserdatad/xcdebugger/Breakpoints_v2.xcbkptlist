@@ -375,53 +375,5 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F513864-C22D-4E54-92C6-964BF8A9C3CB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "prepper/main.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "analyze(_:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "2F513864-C22D-4E54-92C6-964BF8A9C3CB - a4c8ba6568b0f91d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "prepper.analyze(Swift.Array&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "prepper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "740">
-               </Location>
-               <Location
-                  uuid = "2F513864-C22D-4E54-92C6-964BF8A9C3CB - a4c8ba6568b0f93a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "prepper.analyze(Swift.Array&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "prepper"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/billdonner/Documents/challenges/prepper/main.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "740">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -55,7 +55,7 @@ func printTopicsAndDuplicates () {
     }
   }
 }
-fileprivate func fixupJSON(   data: Data, url: String)-> [Challenge] {
+fileprivate func fixupJSON(   data: Data, url: String)throws -> [Challenge] {
   // see if missing ] at end and fix it\
   do {
     return try Challenge.decodeArrayFrom(data: data)
@@ -66,16 +66,19 @@ fileprivate func fixupJSON(   data: Data, url: String)-> [Challenge] {
       if !s.hasSuffix("]") {
         if let v = String(s+"]").data(using:.utf8) {
           do {
-            return try Challenge.decodeArrayFrom(data: v)
+            let x = try Challenge.decodeArrayFrom(data: v)
+            print("****Fixup Succeeded by adding a ]. There is nothing to do")
+            return x
           }
           catch {
-            print("Can't read contents of \(url), error: \(error)" )
+            print("****Can't read Challenges from \(url), error: \(error)" )
+            throw PrepperError.badInputURL
           }
         }
       }
     }
   }
-  return []
+  throw PrepperError.noChallenges
 }
 
 func analyze(_ urls:[String]) {
@@ -90,12 +93,13 @@ func analyze(_ urls:[String]) {
     }
     do {
       data = try Data(contentsOf: u)
+      
+      challenges = try fixupJSON( data: data, url: url)
     }
     catch {
       print("Can't read contents of \(url), error: \(error)" )
       continue
     }
-    challenges = fixupJSON( data: data, url: url)
     
     // Decode the data, which means converting data to Swift objects.
     handle_challenges(challenges:challenges)
@@ -142,6 +146,8 @@ enum PrepperError: Error {
   case badOutputURL
   case cantWrite
   case noAPIKey
+  case noChallenges
+  case noOpinions
 }
 fileprivate func prep(_ x:String, initial:String) throws  -> FileHandle? {
   if (FileManager.default.createFile(atPath: x, contents: nil, attributes: nil)) {
@@ -165,7 +171,7 @@ fileprivate func writeAsPrompts<T:Encodable>(_ data: [T], _ outurl: URL) throws 
   let encoder = JSONEncoder()
   encoder.outputFormatting = .prettyPrinted
   var bc = 0
-  let fh = try prep(String(outurl.absoluteString.dropFirst(7)),initial: "*** Prepper run at \(Date())****")!
+  let fh = try prep(String(outurl.absoluteString.dropFirst(7)),initial: "\n*** Prepper run at \(Date())****")!
   defer {
     try? fh.close()
   }
@@ -174,7 +180,7 @@ fileprivate func writeAsPrompts<T:Encodable>(_ data: [T], _ outurl: URL) throws 
       let da  = try encoder.encode(d)
       let json = String(data:da ,encoding: .utf8)
       if let json  {
-        let outs = "***\n\(json)\nAnswer with id ,true-or-false, and explanation as JSON\n\n"
+        let outs = "***\n\(json)\nAnswer with id ,truth, and multi-line explanation as JSON\n\n"
         bc += outs.count
         fh.write(outs.data(using: .utf8)!)      }
     }
@@ -212,7 +218,6 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
   let gamedataURL = URL(string:fj)
   let promptsURL = URL(string:fp)
   guard let promptsURL =  promptsURL, let gamedataURL = gamedataURL else { return }
-  
   for url in urls {
     // read all the urls again
     guard let u = URL(string:url) else {
@@ -222,13 +227,11 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
     do {
       fileCount += 1
       let data = try Data(contentsOf: u)
-      allChallenges =   fixupJSON(data:data,  url:u.absoluteString)
-      
+      allChallenges =  try fixupJSON(data:data,  url:u.absoluteString)
     }
     catch {
       print("Could not re-read \(u) error:\(error)")
       continue
-      
     }
     print(">Prepper reading from \(url)")
     //sort by topic
@@ -257,7 +260,6 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
       topicCount += 1
       gameDatum.append( GameData(subject:last,challenges: theseChallenges)) //include remainders
     }
-    
     // compute truth challenges
     var cha:[TruthQuery] = []
     for gd in gameDatum {
@@ -265,7 +267,6 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
         cha.append(ch.makeTruthQuery())
       }
     }
-    
     do{
       let ac = try writeAsPrompts(cha, promptsURL)
       print(">Wrote \(ac) bytes \(cha.count) prompts to \(promptsURL)")
@@ -311,4 +312,3 @@ struct Prepper: ParsableCommand {
 }
 
 Prepper.main()
-exit(0)

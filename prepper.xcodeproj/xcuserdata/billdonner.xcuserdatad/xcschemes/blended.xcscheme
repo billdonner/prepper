@@ -52,11 +52,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "file:///users/billdonner/Desktop/fs/prepper-main-out"
+            argument = "file:///users/billdonner/Desktop/fs/readyforios2"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "file:///users/billdonner/Desktop/fs/prepper-main-in.json"
+            argument = "file:///users/billdonner/Desktop/fs/blender-output.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
