@@ -16,7 +16,7 @@ struct TruthQuery :Codable {
 }
 extension Challenge {
   func makeTruthQuery ( ) -> TruthQuery {
-    TruthQuery(id: self.id ?? "farts", question:self.question, answer: self.correct, truth: nil)
+    TruthQuery(id: self.id, question:self.question, answer: self.correct, truth: nil)
   }
 }
 var count : Int = 0
