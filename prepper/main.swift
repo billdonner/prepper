@@ -8,17 +8,7 @@ import Foundation
 import ArgumentParser
 import q20kshare
 
-struct TruthQuery :Codable {
-  let id:String
-  let question:String
-  let answer:String
-  let truth:Bool?
-}
-extension Challenge {
-  func makeTruthQuery ( ) -> TruthQuery {
-    TruthQuery(id: self.id, question:self.question, answer: self.correct, truth: nil)
-  }
-}
+
 var count : Int = 0
 var bytesRead : Int = 0
 var topicCounts: [String:Int] = [:]
@@ -171,7 +161,7 @@ fileprivate func writeAsPrompts<T:Encodable>(_ data: [T], _ outurl: URL) throws 
   let encoder = JSONEncoder()
   encoder.outputFormatting = .prettyPrinted
   var bc = 0
-  let fh = try prep(String(outurl.absoluteString.dropFirst(7)),initial: "\n*** Prepper run at \(Date())****")!
+  let fh = try prep(String(outurl.absoluteString.dropFirst(7)),initial: "")!
   defer {
     try? fh.close()
   }
@@ -190,34 +180,30 @@ fileprivate func writeAsPrompts<T:Encodable>(_ data: [T], _ outurl: URL) throws 
   }
   return bc
 }
-fileprivate func writeAsJSON<T:Encodable>(_ data: [T], _ outurl: URL) throws -> Int {
-  let encoder = JSONEncoder()
-  encoder.outputFormatting = .prettyPrinted
-  var bc = 0
-  do {
-    let data = try encoder.encode(data)
-    let json = String(data:data,encoding: .utf8)
-    if let json  {
-      bc = json.count
-      try json.write(to: outurl, atomically: false, encoding: .utf8)
-    }
-  }
-  
-  return bc
-}
+//fileprivate func writeAsJSON<T:Encodable>(_ data: [T], _ outurl: URL) throws -> Int {
+//  let encoder = JSONEncoder()
+//  encoder.outputFormatting = .prettyPrinted
+//  var bc = 0
+//  do {
+//    let data = try encoder.encode(data)
+//    let json = String(data:data,encoding: .utf8)
+//    if let json  {
+//      bc = json.count
+//      try json.write(to: outurl, atomically: false, encoding: .utf8)
+//    }
+//  }
+//  return bc
+//}
 
-func writeOutputFiles(_ urls:[String], gameFile:String)
+func writeVeracityPromptScript(_ urls:[String], gameFile:String)
 {
   var allChallenges:[Challenge] = []
   var topicCount = 0
   var fileCount = 0
-  let start_time = Date()
-  
-  let fj = gameFile + "-gamedata.json"
-  let fp = gameFile + "-prompts.txt"
-  let gamedataURL = URL(string:fj)
-  let promptsURL = URL(string:fp)
-  guard let promptsURL =  promptsURL, let gamedataURL = gamedataURL else { return }
+  //let start_time = Date()
+   
+  let promptsURL = URL(string:gameFile)
+  guard let promptsURL =  promptsURL else { return }
   for url in urls {
     // read all the urls again
     guard let u = URL(string:url) else {
@@ -271,9 +257,9 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
       let ac = try writeAsPrompts(cha, promptsURL)
       print(">Wrote \(ac) bytes \(cha.count) prompts to \(promptsURL)")
       // write Challenges as JSON to file
-      let bc = try writeAsJSON(gameDatum, gamedataURL)
-      let elapsed = Date().timeIntervalSince(start_time)
-      print(">Wrote \(bc) bytes, \(allChallenges.count) challenges, \(topicCount) topics to \(gamedataURL) in elapsed \(elapsed) secs")
+//      let bc = try writeAsJSON(gameDatum, gamedataURL)
+//      let elapsed = Date().timeIntervalSince(start_time)
+//      print(">Wrote \(bc) bytes, \(allChallenges.count) challenges, \(topicCount) topics to \(gamedataURL) in elapsed \(elapsed) secs")
     }
     catch {
       print("Utterly failed to write files \(error)")
@@ -285,27 +271,24 @@ func writeOutputFiles(_ urls:[String], gameFile:String)
 // MARK: - command line parsing with Argument Parser
 struct Prepper: ParsableCommand {
   static let configuration = CommandConfiguration(
-    abstract: "Read, Validate, and de-duplicate remote JSON Pumper-out files\n\n *** WARNING: output precedes input files on command line ***\n\nversion 0.1.3",
-    version: "0.1.3",
+    abstract: "Step 2: Prepper reads the JSON Challenges from Pumper de-duplicates, and prepares a new script. This script contains questions about the veracity of the JSON data and is read by Veracitator.",
+    version: "0.2.1",
     subcommands: [],
     defaultSubcommand: nil,
     helpNames: [.long, .short]
   )
   
-  @Argument(help: "Local Filespec for the output GamePlay file.")
+  @Argument(help: "input file (Between_1_2.json):")
+  var url: String
+  @Argument(help: "output file (Between_2_3.txt):")
   var gameFile: String
-  
-  @Argument(help: "List of input URLs of files to process.")
-  var urls: [String]
-  
 
-  
   func run() throws {
     let start_time = Date()
     print(">Prepper Command Line: \(CommandLine.arguments)")
-    print(">Prepper running at \(Date())")
-    analyze(urls)
-    writeOutputFiles(urls, gameFile:gameFile)
+    print(">Prepper is STEP2 running at \(Date())")
+    analyze([url])
+    writeVeracityPromptScript([url], gameFile:gameFile)
     let elapsed = Date().timeIntervalSince(start_time)
     print(">Prepper finished in \(elapsed)secs")
   }

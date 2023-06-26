@@ -1,19 +1,19 @@
 #  Prepper - Prepare ChatGPT Output for IOS App
 
 Freeport.Software internal Utility 
-0.1.3 believe all fixed up 
+0.2.1
 ```
-OVERVIEW: Read, Validate, and de-duplicate remote json Challenge files 
-specified as url arguments, supporting an -f filespec to generate a GamePlay
-ready json file
+OVERVIEW: Step 2: Prepper reads the JSON Challenges from Pumper de-duplicates,
+and prepares a new script. This script contains questions about the veracity of
+the JSON data and is read by Veracitator.
 
-USAGE: prepper [--game-file <game-file>] <urls> ...
+USAGE: prepper <url> <game-file>
 
 ARGUMENTS:
-  <urls>                  List of input URLs of files to process
+  <url>                   input file (Between_1_2.json):
+  <game-file>             output file (Between_2_3.txt):
 
- 
-  <game-file>              Specify the filespec for the output GamePlay file
+OPTIONS:
   --version               Show the version.
   -h, --help              Show help information.
   ```
